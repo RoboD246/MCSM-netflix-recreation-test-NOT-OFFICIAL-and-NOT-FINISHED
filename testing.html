@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MCSM Netflix Edition</title>
+        <link rel="icon" href="mcsmFiles/icon.jpeg" type="image/mcsm/type">
+    </head>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        #videoContainer {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .button {
+            position: absolute;
+            width: 44vw;
+            height: auto;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s;
+        }
+
+        .fade-in {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .fade-out {
+            opacity: 0 !important;
+            transition: opacity 1s !important;
+        }
+
+        .selected {
+            transition: none !important;
+            opacity: 0.5 !important;
+        }
+
+        #unmuteButton {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #ep1ManTinyZombies,
+        #ep1ManGiantChickens,
+        #ep1ManCoolMask,
+        #ep1ManNotFunnyAxel,
+        #ep1ManEnderConWillBeFunEitherWay,
+        #ep1ManMeetingGabrielHonnor,
+        #ep1ManBuildCreeper,
+        #ep1ManBuildEnderman,
+        #ep1ManOrderOfThePigCreeper,
+        #ep1ManOrderOfThePigEnderman,
+        #ep1ManDeadEndersCreeper,
+        #ep1ManDeadEndersEnderman,
+        #ep1ManNetherManiacsCreeper,
+        #ep1ManNetherManiacsEnderman,
+        #button1 {
+            position: absolute;
+            width: 44vw;
+            height: auto;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s;
+        }
+
+        #ep1ManGiantChickens,
+        #ep1ManCoolMask,
+        #ep1ManEnderConWillBeFunEitherWay,
+        #ep1ManBuildEnderman,
+        #ep1ManOrderOfThePigCreeper,
+        #ep1ManOrderOfThePigEnderman {
+            top: 87%;
+            left: 25%;
+        }
+
+        #ep1ManDeadEndersCreeper,
+        #ep1ManDeadEndersEnderman {
+            top: 78%;
+            left: 50%;
+        }
+
+        #ep1ManTinyZombies,
+        #ep1ManNotFunnyAxel,
+        #ep1ManMeetingGabrielHonnor,
+        #ep1ManBuildCreeper,
+        #ep1ManNetherManiacsCreeper,
+        #ep1ManNetherManiacsEnderman {
+            top: 87%;
+            left: 75%;
+        }
+
+        #button1 {
+            position: absolute;
+            width: 44vw;
+            height: auto;
+            top: 87%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1s;
+        }
+
+    </style>
+<body>
+    <div id="videoContainer">
+        <video id="start1">
+            <source src="mcsmFiles/choice1/start1.mp4" type="video/mp4" />
+            Your browser does not support the video tag
+        </video>
+        <div id="imageButtons">
+            <img id="button1" class="button" src="mcsmFiles/choice1/MaleJesse.png" onclick="handleImageClick(this, 'mcsmFiles/choice1/ep1ManStart.mp4')" />
+            
+            <img id="ep1ManTinyZombies" class="button" src="mcsmFiles/choice2/ep1ManTinyZombies.png" onclick="handleImageClick(this, 'mcsmFiles/choice2/ep1ManTinyZombies.mp4')" /> 
+            <img id="ep1ManGiantChickens" class="button" src="mcsmFiles/choice2/ep1ManGiantChickens.png" onclick="handleImageClick(this, 'mcsmFiles/choice2/ep1ManGiantChickens.mp4')" />
+            
+            <img id="ep1ManCoolMask" class="button" src="mcsmFiles/choice3/ep1ManCoolMask.png" onclick="handleImageClick(this, 'mcsmFiles/choice3/ep1ManCoolMask.mp4')" />
+            <img id="ep1ManNotFunnyAxel" class="button" src="mcsmFiles/choice3/ep1ManNotFunnyAxel.png" onclick="handleImageClick(this, 'mcsmFiles/choice3/ep1ManNotFunnyAxel.mp4')" />
+            
+            <img id="ep1ManEnderConWillBeFunEitherWay" class="button" src="mcsmFiles/choice4/ep1ManEnderConWillBeFunEitherWay.png" onclick="handleImageClick(this, 'mcsmFiles/choice4/ep1ManEnderConWillBeFunEitherWay.mp4')" />
+            <img id="ep1ManMeetingGabrielHonnor" class="button" src="mcsmFiles/choice4/ep1ManMeetingGabrielHonnor.png" onclick="handleImageClick(this, 'mcsmFiles/choice4/ep1ManMeetingGabrielHonnor.mp4')" />
+            
+            <img id="ep1ManBuildCreeper" class="button" src="mcsmFiles/choice5/ep1ManBuildCreeper.png" onclick="handleImageClick(this, 'mcsmFiles/choice5/ep1ManBuildCreeper.mp4')" />
+            <img id="ep1ManBuildEnderman" class="button" src="mcsmFiles/choice5/ep1ManBuildEnderman.png" onclick="handleImageClick(this, 'mcsmFiles/choice5/ep1ManBuildEnderman.mp4')" />
+            
+            <img id="ep1ManOrderOfThePigCreeper" class="button" src="mcsmFiles/choice6/ep1ManOrderOfThePig.png" onclick="handleImageClick(this, 'mcsmFiles/choice6/ep1ManOrderOfThePigCreeper.mp4')" />
+            <img id="ep1ManOrderOfThePigEnderman" class="button" src="mcsmFiles/choice6/ep1ManOrderOfThePig.png" onclick="handleImageClick(this, 'mcsmFiles/choice6/ep1ManOrderOfThePigEnderman.mp4')" />
+            <img id="ep1ManDeadEndersCreeper" class="button" src="mcsmFiles/choice6/ep1ManDeadEnders.png" onclick="handleImageClick(this, 'mcsmFiles/choice6/ep1ManDeadEndersCreeper.mp4')" />
+            <img id="ep1ManDeadEndersEnderman" class="button" src="mcsmFiles/choice6/ep1ManDeadEnders.png" onclick="handleImageClick(this, 'mcsmFiles/choice6/ep1ManDeadEndersEnderman.mp4')" />
+            <img id="ep1ManNetherManiacsCreeper" class="button" src="mcsmFiles/choice6/ep1ManNetherManiacs.png" onclick="handleImageClick(this, 'mcsmFiles/choice6/ep1ManNetherManiacsCreeper.mp4')" />
+            <img id="ep1ManNetherManiacsEnderman" class="button" src="mcsmFiles/choice6/ep1ManNetherManiacs.png" onclick="handleImageClick(this, 'mcsmFiles/choice6/ep1ManNetherManiacsEnderman.mp4')" />
+
+            <img id="ep1ManMayTheBestTeamWinCreeper" class="button" src="mcsmFiles/choice7/ep1ManMayTheBestTeamWin.png" onclick="handleImageClick(this, 'mcsmFiles/choice7/ep1ManMayTheBestTeamWinCreeper.mp4')"/>
+            <img id="ep1ManMayTheBestTeamWinEnderman" class="button" src="mcsmFiles/choice7/ep1ManMayTheBestTeamWin.png" onclick="handleImageClick(this, 'mcsmFiles/choice7/ep1ManMayTheBestTeamWinEnderman.mp4')"/>
+            <img id="ep1ManWeAreGoingToCrushYouCreeper" class="button" src="mcsmFiles/choice7/ep1ManWeAreGoingToCrushYou.png" onclick="handleImageClick(this, 'mcsmFiles/choice7/ep1ManWeAreGoingToCrushYouCreeper.mp4')"/>
+            <img id="ep1ManWeAreGoingToCrushYouEnderman" class="button" src="mcsmFiles/choice7/ep1ManWeAreGoingToCrushYou.png" onclick="handleImageClick(this, 'mcsmFiles/choice7/ep1ManWeAreGoingToCrushYouEnderman.mp4')"/>
+        </div>
+    </div>
+    
+    <button id="unmuteButton" onclick="unmuteVideo()">Play</button>
+
+    <script>
+        var video = document.getElementById('start1');
+        var unmuteButton = document.getElementById('unmuteButton');
+
+        function showButtonAtTime(buttonId, time, videoSrcs) {
+            var button = document.getElementById(buttonId);
+            if (video.currentTime >= time && video.currentSrc.includes(videoSrcs)) {
+                button.classList.add('fade-in');
+            }
+        };
+
+        // Function to check the video's current time
+        video.ontimeupdate = function () {
+            showButtonAtTime('button1', 125, ['start1.mp4']); //Start 125s
+            showButtonAtTime('ep1ManTinyZombies', 157, ['ep1ManStart.mp4']); // 157s
+            showButtonAtTime('ep1ManGiantChickens', 157, ['ep1ManStart.mp4']); // 157s
+
+            showButtonAtTime('ep1ManCoolMask', 69, ['ep1ManTinyZombies.mp4']); // 69s
+            showButtonAtTime('ep1ManCoolMask', 85, ['ep1ManGiantChickens.mp4']); // 85s
+            showButtonAtTime('ep1ManNotFunnyAxel', 85, ['ep1ManGiantChickens.mp4']); // 85s
+            showButtonAtTime('ep1ManNotFunnyAxel', 69, ['ep1ManTinyZombies.mp4']); // 69s
+
+            showButtonAtTime('ep1ManEnderConWillBeFunEitherWay', 128, ['ep1ManNotFunnyAxel.mp4']); // 128
+            showButtonAtTime('ep1ManEnderConWillBeFunEitherWay', 131, ['ep1ManCoolMask.mp4']); // 131s
+            showButtonAtTime('ep1ManMeetingGabrielHonnor', 128, ['ep1ManNotFunnyAxel.mp4']); // 128s
+            showButtonAtTime('ep1ManMeetingGabrielHonnor', 131, ['ep1ManCoolMask.mp4']); // 131s
+
+            showButtonAtTime('ep1ManBuildCreeper', 91, 'ep1ManEnderConWillBeFunEitherWay.mp4'); // 91s
+            showButtonAtTime('ep1ManBuildCreeper', 91, 'ep1ManMeetingGabrielHonnor.mp4'); // 91s
+            showButtonAtTime('ep1ManBuildEnderman', 91, 'ep1ManMeetingGabrielHonnor.mp4'); // 91s
+            showButtonAtTime('ep1ManBuildEnderman', 91, 'ep1ManEnderConWillBeFunEitherWay.mp4'); // 91s
+
+            showButtonAtTime('ep1ManOrderOfThePigCreeper', 156, 'ep1ManBuildCreeper'); // 156s
+            showButtonAtTime('ep1ManOrderOfThePigEnderman', 156, 'ep1ManBuildEnderman'); // 156s
+            showButtonAtTime('ep1ManDeadEndersCreeper', 156, 'ep1ManBuildCreeper'); // 156s
+            showButtonAtTime('ep1ManDeadEndersEnderman', 156, 'ep1ManBuildEnderman'); // 156s
+            showButtonAtTime('ep1ManNetherManiacsCreeper', 156, 'ep1ManBuildCreeper'); // 156s
+            showButtonAtTime('ep1ManNetherManiacsEnderman', 156, 'ep1ManBuildEnderman'); // 156s
+
+            showButtonAtTime('ep1ManMayTheBestTeamWinCreeper', 2, 'ep1ManNetherManiacsCreeper'); // 
+            showButtonAtTime('ep1ManMayTheBestTeamWinCreeper', 2, 'ep1ManDeadEndersCreeper'); // 
+        };
+
+        function resetButtonVisibility() {
+            var buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => {
+                button.classList.remove('fade-in', 'fade-out');
+                button.style.opacity = '0';
+                button.style.visibility = 'hidden';
+            });
+        };
+
+        // Toggle play/pause with spacebar
+        document.onkeypress = function (e) {
+            if ((e || window.event).keyCode === 32) {
+                video.paused ? video.play() : video.pause();
+            }
+        };
+
+        // Function to navigate to a new page
+        function navigateToNewPage() {
+            window.location.href = "mcsmFiles/choice2/choice2.html";
+        };
+
+        function unmuteVideo() {
+            video.muted = false;
+            video.play();
+            unmuteButton.style.display = 'none';
+        };
+
+        function playNextVideo(nextVideoSrc) {
+            video.pause();
+            video.src = nextVideoSrc;
+            video.load();
+            video.play();
+
+        };
+
+        function handleImageClick(button, nextVideoSrc) {
+            var buttons = document.querySelectorAll('.button');
+            button.classList.add('selected');
+            playNextVideo(nextVideoSrc);
+            setTimeout(function () {
+                buttons.forEach(button => button.classList.remove('selected'));
+                buttons.forEach(button => button.classList.add('fade-out'));
+                setTimeout(function () {
+                    resetButtonVisibility();
+                }, 1000);
+            }, 300);
+        };
+    </script>
+</body>
+</html>
